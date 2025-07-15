@@ -1,0 +1,37 @@
+class Solution {
+public:
+    bool isValid(string word) {
+
+        int size = word.size();
+        if(size < 3 || size > 20 ){
+            return false;
+        }
+
+        for (char ch : word) {
+            if (!isalnum(ch)) {
+                // Special character detected
+                return false;
+            }
+        }
+        
+        bool vowel = false;
+        bool cons = false;
+
+        for(char ch:word){
+            if(isalpha(ch)){
+                char lower = tolower(ch);
+                if(lower == 'a'||lower == 'e'||lower == 'i'||lower == 'o'||lower == 'u'){
+                    vowel = true;
+                }
+                else
+                cons = true;
+            
+               
+            }
+        
+
+        }
+        return vowel&&cons;
+    }
+     
+};
