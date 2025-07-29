@@ -1,0 +1,33 @@
+class Solution {
+public:
+    
+    bool isVowel(char c) {
+        c = tolower(c); // normalize to lowercase for consistency
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+    string reverseVowels(string s) {
+
+        int n = s.size();
+
+        int i=0;
+        int end = n-1;
+        
+        while(i<end){
+
+            if(!isVowel(s[i]) ){
+                i++;
+            }
+            else if(!isVowel(s[end])){
+                end--;
+            }
+            else{
+                swap(s[i],s[end]);
+                i++;
+                end--;
+            }
+
+
+        }
+        return s;
+    }
+};
